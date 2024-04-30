@@ -1,7 +1,5 @@
-###
- # @Author: 卢天宇
- # @Date: 2024-04-29 19:14:25
- # @Description: 
-### 
-echo 'xx'
-npx --no-install commitlint -e $HUSKY_GIT_PARAMS
+echo ""
+echo "\033[1;36m🦊🦊🦊 Running commit-msg...\033[0m"
+echo ""
+
+npx commitlint --edit
