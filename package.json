@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint . --fix --quiet"
+    "lint": "eslint . --fix --quiet",
+    "test:": "echo xx",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
