@@ -1,19 +1,29 @@
+/*
+ * @Author: 卢天宇
+ * @Date: 2024-04-29 17:38:55
+ * @Description: eslint配置文件
+ */
 import globals from 'globals';
 import pluginJs from '@eslint/js';
-import tseslint from 'typescript-eslint';
+import typescriptEslint from 'typescript-eslint';
 import prettier from 'eslint-plugin-prettier';
+import prettierConfig from 'eslint-config-prettier';
+console.log(typescriptEslint.configs.recommended);
 
 export default [
-	{ languageOptions: { globals: { ...globals.node, ...globals.browser } } },
+	{ languageOptions: { globals: { ...globals.browser, ...globals.node } } },
 	pluginJs.configs.recommended,
-	...tseslint.configs.recommended,
+	...typescriptEslint.configs.recommended,
+	prettierConfig,
 	{
 		name: 'customer',
+		files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
 		rules: {
 			'prettier/prettier': 'error',
 			'no-case-declarations': 'off',
 			'no-constant-condition': 'off',
-			'@typescript-eslint/ban-ts-comment': 'off'
+			'@typescript-eslint/ban-ts-comment': 'off',
+			'@typescript-eslint/no-unused-vars': 'error'
 		},
 		plugins: {
 			prettier

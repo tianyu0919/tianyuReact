@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint . -c .js,.ts,.jsx,.tsx --fix --quiet ./packages"
+    "lint": "eslint . --fix --quiet"
   },
   "keywords": [],
   "author": "",
