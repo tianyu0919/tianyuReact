@@ -53,6 +53,14 @@ importers:
         specifier: ^7.7.1
         version: 7.7.1(eslint@9.1.1)(typescript@5.4.5)
 
+  packages/react:
+    dependencies:
+      shared:
+        specifier: workspace:^
+        version: link:../shared
+
+  packages/shared: {}
+
 packages:
   /@babel/code-frame@7.24.2:
     resolution: { integrity: sha512-y5+tLQyV8pg3fsiln67BVLD1P13Eg4lh5RW9mF0zUuvLrv9uIQ4MCL+CRT+FTsBlBjcIan6PGsLcBN0m3ClUyQ== }
