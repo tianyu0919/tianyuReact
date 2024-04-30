@@ -1,2 +1,7 @@
-npx --no-install commitlint -e $HUSKY_GIT_PARAMS
+###
+ # @Author: 卢天宇
+ # @Date: 2024-04-29 19:14:25
+ # @Description: 
+### 
 echo 'xx'
+npx --no-install commitlint -e $HUSKY_GIT_PARAMS

@@ -8,7 +8,6 @@ import pluginJs from '@eslint/js';
 import typescriptEslint from 'typescript-eslint';
 import prettier from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
-console.log(typescriptEslint.configs.recommended);
 
 export default [
 	{ languageOptions: { globals: { ...globals.browser, ...globals.node } } },
