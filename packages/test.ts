@@ -1,7 +1,7 @@
 const a = 12;
 
 function sum(a: number, b: number): number {
-	return a + b;
+  return a + b;
 }
 
 const s = sum(1, 2);
