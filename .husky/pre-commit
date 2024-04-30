@@ -1,7 +1,3 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-echo $(dirname -- "$0")
 echo ""
 echo "\033[1;36m🐑🐑🐑 Running pre-commit...\033[0m"
 echo ""
