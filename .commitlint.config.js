@@ -3,7 +3,7 @@
  * @Date: 2024-04-29 19:10:34
  * @Description: commitlint 配置文件
  */
-module.exports = {
+export default {
   extends: ['@commitlint/config-conventional'],
   helpUrl: 'https://commitlint.js.org/#/reference-configuration',
   rules: {
