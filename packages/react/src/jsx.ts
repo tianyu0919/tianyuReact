@@ -4,10 +4,10 @@
  * @Description:
  */
 import { REACT_ELEMENT_TYPE } from 'shared/ReactSymbols';
-import { Type, Key, Ref, Props, ElementType, type ReactElement } from 'shared/ReactTypes';
+import { Type, Key, Ref, Props, ElementType, ReactElementType } from 'shared/ReactTypes';
 
 // * ReactElement函数
-const ReactElement = function (type: Type, key: Key, ref: Ref, props: Props): ReactElement {
+const ReactElement = function (type: Type, key: Key, ref: Ref, props: Props): ReactElementType {
   const element = {
     $$typeof: REACT_ELEMENT_TYPE,
     type,
