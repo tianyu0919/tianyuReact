@@ -4,6 +4,9 @@
  * @Description: 打印loading效果
  */
 class Ora {
+  timer: NodeJS.Timeout | null;
+  spinnerIdx: number;
+  spinnerChars: string[];
   constructor() {
     this.timer = null;
     this.spinnerIdx = 0;
@@ -16,7 +19,7 @@ class Ora {
     }, 100);
   }
   stop() {
-    clearInterval(this.timer);
+    clearInterval(this.timer!);
     // process.stdout.write(`\rDone!\n`);
     this.spinnerIdx = 0;
   }
