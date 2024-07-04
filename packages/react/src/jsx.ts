@@ -14,7 +14,7 @@ const ReactElement = function (type: Type, key: Key, ref: Ref, props: Props): Re
     key,
     ref,
     props,
-    __mark: '天宇'
+    __mark: 'tianyu'
   };
 
   return element;
@@ -55,4 +55,30 @@ export const jsx = (type: ElementType, config: any, ...maybeChildren: any) => {
 };
 
 // * 设置生产环境和开发环境都是一个实现。
-export const jsxDEV = jsx;
+
+export const jsxDEV = (type: ElementType, config: any) => {
+  let key: Key = null;
+  const props: Props = {};
+  let ref: Ref = null;
+
+  for (const prop in config) {
+    const val = config[prop];
+    if (prop === 'key') {
+      if (val !== undefined) {
+        key = '' + val;
+      }
+      continue;
+    }
+    if (prop === 'ref') {
+      if (val !== undefined) {
+        ref = val;
+      }
+      continue;
+    }
+    if ({}.hasOwnProperty.call(config, prop)) {
+      props[prop] = val;
+    }
+  }
+
+  return ReactElement(type, key, ref, props);
+};
