@@ -5,6 +5,8 @@
  */
 import { getPackageJson, resolvePkgPath, getBaseRollupPlugins } from './utils';
 import cleanPlugin from './common/cleanPlugin';
+import { terser } from 'rollup-plugin-terser';
+import generatePackageJson from 'rollup-plugin-generate-package-json';
 
 const { name, module } = getPackageJson('react');
 const pkgPath = resolvePkgPath(name);
@@ -19,7 +21,15 @@ export default [
       name: 'index.js',
       format: 'umd'
     },
-    plugins: [cleanPlugin({ targets: ['dist'], verbose: true }), getBaseRollupPlugins()]
+    plugins: [
+      cleanPlugin({ targets: ['dist'], verbose: true }),
+      ...getBaseRollupPlugins(),
+      generatePackageJson({
+        inputFolder: pkgPath,
+        outputFolder: pkgDistPath,
+        baseContents: ({ name, description, version }) => ({ name, description, version, main: 'index.js' })
+      })
+    ]
   },
   // * jsx-runtime
   {
@@ -38,6 +48,6 @@ export default [
         format: 'umd'
       }
     ],
-    plugins: [getBaseRollupPlugins()]
+    plugins: [...getBaseRollupPlugins()]
   }
 ];

@@ -5,7 +5,8 @@
  */
 import path from 'path';
 import fs from 'fs';
-import ts from 'rollup-plugin-typescript2';
+// import ts from 'rollup-plugin-typescript2';
+import ts from '@rollup/plugin-typescript';
 import cjs from '@rollup/plugin-commonjs';
 
 const pkgPath = path.resolve(__dirname, '../../packages');
