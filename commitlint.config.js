@@ -9,7 +9,7 @@ module.exports = {
   rules: {
     // "type-enum": [2, 'always', ['傻逼', '一贤']]
     // "scope-enum": [2, 'always', ['body']]
-    'scope-empty': [2, 'never'], // * 不能为空
+    'scope-empty': [1, 'never'], // * 不能为空
     'subject-empty': [2, 'never'] // * 不能为空
   }
 };
