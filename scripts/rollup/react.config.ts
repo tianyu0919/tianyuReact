@@ -5,7 +5,7 @@
  */
 import { getPackageJson, resolvePkgPath, getBaseRollupPlugins } from './utils';
 import cleanPlugin from './common/cleanPlugin';
-import { terser } from 'rollup-plugin-terser';
+import { terser } from 'rollup-plugin-terser'; // * 代码压缩
 import generatePackageJson from 'rollup-plugin-generate-package-json';
 
 const { name, module } = getPackageJson('react');
